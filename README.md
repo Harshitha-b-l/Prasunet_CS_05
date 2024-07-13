@@ -1,1 +1,11 @@
-# Prasunet_CS_05
+Creating a packet sniffer tool in Java involves capturing and analyzing network packets to display relevant information such as source and destination IP addresses, protocols, and payload data. This project leverages the jNetPcap library, a Java wrapper for the popular pcap library, to facilitate low-level network interactions. It's crucial to emphasize that this tool is intended for educational purposes only and should be used ethically, with explicit permission and for legitimate purposes such as network diagnostics or learning.
+
+The provided code demonstrates a basic implementation of a packet sniffer. The program starts by listing all available network devices on the system, allowing the user to select one for packet capturing. This is achieved using the Pcap.findAllDevs method, which populates a list of devices and provides descriptions for easier identification. Once a device is selected, the program opens it in promiscuous mode, meaning it will capture all network packets, not just those addressed to the device.
+
+A packet handler is defined to process each captured packet. This handler uses the PcapPacketHandler interface to extract and print details such as source and destination IP addresses, protocol types, and port information for TCP and UDP packets. The ip, tcp, and udp headers are parsed to retrieve and display this information. The handler is then passed to the pcap.loop method, which captures packets indefinitely and processes them using the handler.
+
+Running this program involves compiling the Java code with the jNetPcap library and executing it to capture and analyze network traffic. The output will include detailed information about each packet, helping users understand the structure and flow of network data. This can be particularly useful for learning about networking concepts, troubleshooting network issues, or conducting security analyses.
+
+Ethical considerations are paramount when using a packet sniffer. Users must obtain explicit consent before capturing network traffic on any device to ensure privacy and legality. The tool should be used responsibly, with a clear purpose and within the boundaries of legal regulations. Captured data must be handled securely to prevent unauthorized access or misuse.
+
+In summary, this packet sniffer project showcases the power of the jNetPcap library for capturing and analyzing network packets in Java. It provides a practical introduction to network programming and packet analysis, emphasizing the importance of ethical use and data protection.
